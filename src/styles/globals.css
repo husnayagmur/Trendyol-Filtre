@@ -1,0 +1,14 @@
+/* Google Fonts'u burada import edin */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+
+/* Tailwind CSS direktifleri */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tailwind ile ekleme */
+@layer utilities {
+    .font-medium-semi {
+      font-weight: 550;
+    }
+}
