@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
 import { FaAngleRight } from "react-icons/fa6";
-import categoriesData from '../data/CategoriesMan.json'; // JSON verisini import et
+import categoriesData from '../data/CategoriesMan.json';
 
 const CategoriesMan = () => {
-  const categoriesFromJson = categoriesData.categoriesMan; // JSON'dan gelen kategoriler
-  const [activeIndex, setActiveIndex] = useState(0); // Aktif kategori indeksi
+  const categoriesFromJson = categoriesData.categoriesMan;
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <div className="h-[83vh] w-[64vw] bg-white p-3 text-sm overflow-hidden">
-      <div className="grid grid-cols-6 gap-4"> {/* 6 sütunlu grid düzeni */}
-        
-        {/* İlk Sütun: Giyim */}
+      <div className="grid grid-cols-6 gap-4">
+
         <div className="w-full">
           <h4 className="text-sm flex items-center text-orange mb-1 whitespace-nowrap hover:underline hover:decoration-orange-500 hover:underline-offset">
             <span>Giyim</span>
@@ -25,7 +24,6 @@ const CategoriesMan = () => {
           </div>
         </div>
 
-        {/* İkinci Sütun: Ayakkabı ve Kişisel Bakım */}
         <div className="w-full">
           <h4 className="text-sm flex items-center text-orange mb-1 whitespace-nowrap hover:underline hover:decoration-orange-500 hover:underline-offset">
             <span>Ayakkabı</span>
@@ -51,7 +49,6 @@ const CategoriesMan = () => {
           </div>
         </div>
 
-        {/* Üçüncü Sütun: Çanta ve Büyük Bedende */}
         <div className="w-full">
           <h4 className="text-sm flex items-center text-orange mb-1 whitespace-nowrap hover:underline hover:decoration-orange-500 hover:underline-offset">
             <span>Çanta</span>
@@ -77,7 +74,6 @@ const CategoriesMan = () => {
           </div>
         </div>
 
-        {/* Dördüncü Sütun: Saat & Aksesuar, İç Giyim */}
         <div className="w-full">
           <h4 className="text-sm flex items-center text-orange mb-1 whitespace-nowrap hover:underline hover:decoration-orange-500 hover:underline-offset">
             <span>Saat & Aksesuar</span>
@@ -103,7 +99,6 @@ const CategoriesMan = () => {
           </div>
         </div>
 
-        {/* Beşinci Sütun: Spor & Outdoor */}
         <div className="w-full">
           <h4 className="text-sm flex items-center text-orange mb-1 whitespace-nowrap hover:underline hover:decoration-orange-500 hover:underline-offset">
             <span>Spor & Outdoor</span>
@@ -118,7 +113,6 @@ const CategoriesMan = () => {
           </div>
         </div>
 
-        {/* Altıncı Sütun: Elektronik ve Lüks & Designer */}
         <div className="w-full">
           <h4 className="text-sm flex items-center text-orange mb-1 whitespace-nowrap hover:underline hover:decoration-orange-500 hover:underline-offset">
             <span>Elektronik</span>
@@ -143,6 +137,7 @@ const CategoriesMan = () => {
             ))}
           </div>
         </div>
+
       </div>
     </div>
   )

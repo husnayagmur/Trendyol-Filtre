@@ -43,7 +43,7 @@ const categories = [
 ];
 
 const CategoryMenu = () => {
-    const [activeIndex, setActiveIndex] = useState(0); // Aktif kategori indeksi
+    const [activeIndex, setActiveIndex] = useState(0);
 
     const getCategoryComponent = () => {
         switch (activeIndex) {
@@ -53,17 +53,17 @@ const CategoryMenu = () => {
                 return <CategoriesMan categories={categoriesDataMan.categoriesMan} />;
             case 2:
                 return <CategoriesAnneCocuk categories={categoriesDataAnneCocuk.categoriesAnneCocuk} />;
-            case 3: // Ev & Yaşam
+            case 3:
                 return <CategoriesEvMobilya categories={categoriesDataEvMobilya.categoriesEvMobilya} />;
-            case 4: // Süpermarket
+            case 4:
                 return <CategoriesSupermarket categories={categoriesDataSupermarket.categoriesSupermarket} />;
-            case 5: // Kozmetik
+            case 5:
                 return <CategoriesKozmetik categories={categoriesDataKozmetik.categoriesKozmetik} />;
-            case 6: // Ayakkabı & Çanta
+            case 6:
                 return <CategoriesAyakkabiCanta categories={categoriesDataAyakkabiCanta.categoriesAyakkabiCanta} />;
-            case 7: // Elektronik
+            case 7:
                 return <CategoriesElektronik categories={categoriesDataElektronik.categoriesElektronik} />;
-            case 8: // Spor & Outdoor
+            case 8:
                 return <CategoriesSporOutdoor categories={categoriesDataSporOutdoor.categoriesSporOutdoor} />;
             default:
                 return null;
@@ -77,7 +77,7 @@ const CategoryMenu = () => {
                 {categories.map((category, index) => (
                     <div
                         key={index}
-                        onMouseEnter={() => setActiveIndex(index)} // Mouse gelince aktif kategori değişir
+                        onMouseEnter={() => setActiveIndex(index)}
                         className={`flex items-center px-2 py-3 cursor-pointer group transition-colors duration-300 
                             ${activeIndex === index ? 'bg-white text-orange' : 'bg-Lgray group-hover:bg-white'}`}
                     >
@@ -98,7 +98,6 @@ const CategoryMenu = () => {
                 ))}
             </div>
 
-            {/* Kategorilere göre dinamik içerik */}
             {getCategoryComponent()}
         </div>
     );

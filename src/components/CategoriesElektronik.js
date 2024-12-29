@@ -4,10 +4,10 @@ import categoriesData from '../data/CategoriesElektronik.json';
 const CategoriesElektronik = () => {
   const categoriesFromJson = categoriesData.categoriesElektronik;
   const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <div className="h-[83vh] w-[64vw] bg-white p-3 text-sm overflow-hidden">
-      <div className="grid grid-cols-6 gap-4"> {/* 6 sütunlu grid düzeni */}
-
+      <div className="grid grid-cols-6 gap-4">
 
         <div className="w-full">
           <h4 className="text-sm flex items-center text-orange mb-1 whitespace-nowrap hover:underline hover:decoration-orange-500 hover:underline-offset">
