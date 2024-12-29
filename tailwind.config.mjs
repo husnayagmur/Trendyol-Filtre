@@ -8,8 +8,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        'light-gray': '#fefefe',
+        'dark-grey': '#404040',
+        'light-black': '#1b1b1b',
+        'orange': '#f27a1a',
+        'dark-black':'##333',
+        'mediumdark-gray':'#F3F3F3',
+
+      },
+      fontFamily: {
+        nunito: ["Nunito", "sans-serif"], // Corrected the font-family definition
+        'montserrat': ['Montserrat', 'sans-serif'],
+        'oswald': ['Oswald', 'sans-serif'],
+        'source-sans-pro': ['Source Sans Pro', 'sans-serif'],
       },
     },
   },
