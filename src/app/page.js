@@ -4,8 +4,10 @@ import React from 'react'
 
 const Page = () => {
   return (
-    <div>
+    <div className="bg-mediumdark-gray">
+      <div>
       <Home/>
+      </div>
     </div>
   )
 }

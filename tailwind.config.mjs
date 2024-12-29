@@ -7,13 +7,18 @@ export default {
   ],
   theme: {
     extend: {
+      zIndex: {
+        50: '50', // Menülerin düzgün şekilde üst üste binmesi için
+      },
       colors: {
         'light-gray': '#fefefe',
         'dark-grey': '#404040',
         'light-black': '#1b1b1b',
         'orange': '#f27a1a',
-        'dark-black':'##333',
-        'mediumdark-gray':'#F3F3F3',
+        'dark-black':'#333',
+        'mediumdark-gray':'#F2F2F2',
+        'Lgray':"#F3F3F3",
+        'medium-grey':'#B0B0B0'
 
       },
       fontFamily: {
@@ -21,6 +26,7 @@ export default {
         'montserrat': ['Montserrat', 'sans-serif'],
         'oswald': ['Oswald', 'sans-serif'],
         'source-sans-pro': ['Source Sans Pro', 'sans-serif'],
+        'source-sans':["Source Sans 3", 'serif']
       },
     },
   },
