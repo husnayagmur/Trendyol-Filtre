@@ -5,10 +5,11 @@ import React from 'react'
 const Page = () => {
   return (
     <div className="bg-mediumdark-gray">
-      <div>
-      <Home/>
-      </div>
+    <div>
+      <Home />
     </div>
+  </div>
+  
   )
 }
 

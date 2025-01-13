@@ -71,7 +71,7 @@ const CategoryMenu = () => {
     };
 
     return (
-        <div className="absolute top-6 left-11 font-bold font-source-sans-pro bg-Lgray mt-2 border-t border-mediumdark-gray rounded-b-md flex">
+        <div className="absolute top-6 left-9 font-bold font-source-sans-pro bg-Lgray mt-2 border-t border-mediumdark-gray rounded-b-md flex z-10">
             {/* Kategori Listesi */}
             <div className="h-[84vh] w-[15vw] bg-Lgray">
                 {categories.map((category, index) => (

@@ -1,168 +1,670 @@
 {
-    "categoriesAnneCocuk": [
-      {
-        "name": "Anne & Çocuk",
-        "icon": "/icons/Anne_Cocuk.svg",
-        "subCategories": [
-          {
-            "group": "Bebek",
-            "items": [
-              "Bebek Takımları",
-              "Ayakkabı",
-              "Hastane Çıkışı",
-              "Yenidoğan Kıyafetleri",
-              "Tulum",
-              "Body & Zıbın",
-              "Tişört & Atlet",
-              "Elbise",
-              "Şort",
-              "Bebek Patiği",
-              "Hırka",
-              "Battaniye",
-              "Alt Üst Takım",
-              "Tişört",
-              "Etek",
-              "Çorap",
-              "Şapka",
-              "Eldiven",
-              "Eşofman",
-              "Bere"
-            ]
-          },
-          {
-            "group": "Kız Çocuk",
-            "items": [
-              "Elbise",
-              "Sweatshirt",
-              "Spor Ayakkabı",
-              "Eşofman",
-              "İç Giyim & Pijama",
-              "Tişört & Atlet",
-              "Tayt",
-              "Günlük Ayakkabı",
-              "Şort",
-              "Mont",
-              "Çocuk Oyun Evi",
-              "Oyuncak Bebek",
-              "Oyuncak Mutfak",
-              "Kaban",
-              "Abiye & Elbise",
-              "Ceket",
-              "Pantolon",
-              "Kazak",
-              "Bot",
-              "Şapka & Bere & Eldiven"
-            ]
-          },
-          {
-            "group": "Erkek Çocuk",
-            "items": [
-              "Sweatshirt",
-              "Spor Ayakkabı",
-              "Eşofman",
-              "İç Giyim & Pijama",
-              "Tişört & Atlet",
-              "Günlük Ayakkabı",
-              "Okul Çantası",
-              "Şort",
-              "Gömlek",
-              "Mont",
-              "Oyuncak Traktör",
-              "Akülü Araba",
-              "Kumandalı Araba",
-              "Bisiklet",
-              "Boxer",
-              "İçlik",
-              "Bot",
-              "Krampon",
-              "Şapka & Bere & Eldiven",
-              "Takım Elbise"
-            ]
-          },
-          {
-            "group": "Bebek Bakım",
-            "items": [
-              "Bebek Bezi",
-              "Bebek Şampuanı",
-              "Krem & Yağlar",
-              "Bebek Çantası",
-              "Bebek Sabunları",
-              "Bebek Deterjanları",
-              "Bebek Vücut Kremi",
-              "Islak Mendil",
-              "Bebek Tarağı",
-              "Bebek Yağı",
-              "Bebek Buhar Makinesi",
-              "Bebek Ateş Ölçer"
-            ]
-          },
-          {
-            "group": "Oyuncak",
-            "items": [
-              "Eğitici Oyuncaklar",
-              "Oyuncak Araba",
-              "Oyuncak Bebek",
-              "Bebek & Okul Öncesi",
-              "Kumandalı Oyuncak",
-              "Robot Oyuncak"
-            ]
-          },
-          {
-            "name": "Beslenme Emzirme",
-            "items": [
-              "Biberon & Emzik",
-              "Göğüs Pompası",
-              "Mama Sandalyesi",
-              "Mama Önlüğü",
-              "Alıştırma Bardağı",
-              "Biberon Temizleyici",
-              "Biberon Seti",
-              "Bebek Maması",
-              "Kavanoz Mama",
-              "Sterilizatör",
-              "Bebek Bakım Çantası",
-              "Yemek Setleri",
-              "Kaşık Maması",
-              "Buharlı Pişirici",
-              "Termal Çanta",
-              "Süt Pompası",
-              "Emzirme Önlüğü",
-              "Emzirme Minderi",
-              "Göğüs Pedi",
-              "Göğüs Kremi"
-            ]
-          },
-          {
-            "group": "Taşıma & Güvenlik",
-            "items": [
-              "Bebek Arabası & Puset",
-              "Park Yatak",
-              "Ana Kucağı",
-              "Portbebe & Kanguru",
-              "Yürüteç",
-              "Oto Koltuğu",
-              "Baston Puset",
-              "Kanguru",
-              "Bebek Salıncakları"
-            ]
-          },
-          {
-            "group": "Bebek Odası",
-            "items": [
-              "Bebek Beşiği",
-              "Bebek Yatağı",
-              "Bebek Nevresimleri",
-              "Oyuncak Sepetleri",
-              "Bebek Cibinlik",
-              "Oyuncak Dolabı",
-              "Bebek Odası Mobilyaları",
-              "Bebek Oyun Matları",
-              "Bebek Oyun Parkı"
-            ]
-          }
-        ]
-      }
-    ]
-  }
-  
-  
+  "categoriesAnneCocuk": [
+    {
+      "name": "Anne & Çocuk",
+      "icon": "/icons/Anne_Cocuk.svg",
+      "subCategories": [
+        {
+          "group": "Bebek",
+          "link": "/bebek",
+          "items": [
+            {
+              "name": "Bebek Takımları",
+              "link": "/bebek-takimlari",
+              "images": [
+                {
+                  "src": "/images/yesilBebekKiyafeti.jpg",
+                  "alt": "Altıntaş Peluş Ayı Baskılı Üçlü Erkek Takım",
+                  "price": 360,
+                  "color": "Yeşil",
+                  "gender": "Erkek Bebek",
+                  "brand": "Altıntaş",
+                  "fav": "103 Kişi",
+                  "star": "4.5",
+                  "numberOfPhotos": "(2)",
+                  "shippingFree":"KARGO BEDAVA",
+                  "fastDelivery":"HIZLI TESLIMAT",
+                  "coupon":"15",
+                  "campaignProduct":"Çok Al Az Öde",
+                  "size":"0-3 Ay"
+                },
+                {
+                  "src": "/images/sariBebekKiyafeti.jpg",
+                  "alt": "Altıntaş Erkek Bebek Sarı Pijama Takımı",
+                  "price": 120,
+                  "color": "Sarı",
+                  "gender": "Erkek Bebek",
+                  "brand": "Altıntaş",
+                  "fav": "207 Kişi",
+                  "star": "5.0",
+                  "shippingFree":"KARGO BEDAVA",
+                  "fastDelivery":"HIZLI TESLIMAT",
+                  "campaignProduct":"Çok Al Az Öde",
+                  "size":"3-6 Ay"
+                },
+                {
+                  "src": "/images/3lüKizBebekKiyafeti.jpg",
+                  "alt": "Civil 3 Lü Kız Bebek Takım Uzun Kollu Tişört Peluş Hırka Pembe Alt ",
+                  "price": 110,
+                  "color": "Mor",
+                  "gender": "Kız Bebek",
+                  "brand": "Civil",
+                  "star": "4.5",
+                  "numberOfPhotos": "(1)",
+                  "shippingFree":"KARGO BEDAVA",
+                   "coupon":"15",
+                   "campaignProduct":"Çok Al Az Öde",
+                    "size":"6-9 Ay"
+                  
+                },
+                {
+                  "src": "/images/maviSiyahBebekKiyafeti.jpg",
+                  "alt": "Defacto Erkek Bebek Takımı Mavi Uzun Kollu Tişört Lacivert Alt ",
+                  "price": 180,
+                  "color": "Mavi",
+                  "gender": "Erkek Bebek",
+                  "brand": "Defacto",
+                  "star": "4.5",
+                  "numberOfPhotos": "(5)",
+                  "shippingFree":"KARGO BEDAVA",
+                   "fastDelivery":"HIZLI TESLIMAT",
+                   "coupon":"15",
+                   "campaignProduct":"Çok Al Az Öde",
+                    "size":"3-6 Ay"
+                },
+                {
+                  "src": "/images/lacivertBebekKiyafeti.jpg",
+                  "alt": "Defacto Erkek Bebek 2'li Takım Bisiklet Yaka Baskılı Sweatshirt Beli Lastikli Alt",
+                  "price": 270,
+                  "color": "Lacivert",
+                  "gender": "Erkek Bebek",
+                  "brand": "Defacto",
+                  "star": "5.0",
+                  "shippingFree":"KARGO BEDAVA",
+                  "coupon":"15",
+                  "campaignProduct":"Çok Al Az Öde",
+                   "size":"18-24 Ay"
+                },
+                {
+                  "src":"/images/pembeBebekKiyafeti1.jpg",
+                  "alt": "Defacto Kız Bebek 2'li Takım Beli Lastikli Pantolon ve Body",
+                  "price": 420,
+                  "color": "Pembe",
+                  "gender": "Kız Bebek",
+                  "brand": "Defacto",
+                  "fav": "411 Kişi",
+                  "star": "5.0",
+                  "numberOfPhotos": "(8)",
+                  "shippingFree": "KARGO BEDAVA",
+                  "coupon":"10",
+                  "campaignProduct":"Çok Al Az Öde",
+                   "size":"4-5 Yaş"
+                },
+                {
+                  "src": "/images/pembeBebekKiyafeti.jpg",
+                  "alt": "Kids Kız Bebek 2'li Takım Uzun Kollu Tişört Çiçekli Salopet Elbise",
+                  "price": 590,
+                  "color": [
+                    "Pembe",
+                    "Ekru"
+                  ],
+                  "gender": "Kız Bebek",
+                  "brand": "Kids",
+                  "fav": "192 Kişi",
+                  "star": "5.0",
+                    "fastDelivery":"HIZLI TESLIMAT",
+                     "coupon":"10",
+                     "campaignProduct":"Çok Al Az Öde",
+                      "size":"2-3 Yaş"
+                },
+                {
+                  "src": "/images/siyahPembeBebekKiyafeti.jpg",
+                  "alt": "Defacto Fitilli Kaşkorse Uzun Kollu Pamuklu Tişört Elbise Salopet Takım",
+                  "price": 590,
+                  "color": [
+                    "Siyah",
+                    "Pembe"
+                  ],
+                  "gender": "Kız Bebek",
+                  "brand": "Defacto",
+                  "fav": "314 Kişi",
+                  "star": "5.0",
+                  "shippingFree": "KARGO BEDAVA",
+                  "campaignProduct":"Çok Al Az Öde",
+                   "size":"12-15 Ay"
+                 
+                },
+                {
+                  "src": "/images/yenidoganBebekKiyafeti.jpg",
+                  "alt": "LC Wakiki Kız Bebek Yıldız Desenli 4'lü Hastane Çıkışı Takım",
+                  "price": 360,
+                  "color": "Ekru",
+                  "gender": "Kız Bebek",
+                  "brand": "LC Wakiki",
+                  "star": "5.0",
+                  "fastDelivery":"HIZLI TESLIMAT",
+                  "campaignProduct":"Çok Al Az Öde",
+                  "size":"Yeni Doğan"
+                },
+                {
+                  "src":"/images/yesilBebekKiyafeti1.jpg",
+                  "alt": "LC Wakiki Kız Bebek Yıldız Desenli 4'lü Hastane Çıkışı Takım",
+                  "price": 360,
+                  "color": "Ekru",
+                  "gender": "Kız Bebek",
+                  "brand": "LC Wakiki",
+                  "star": "5.0",
+                  "fastDelivery":"HIZLI TESLIMAT",
+                  "campaignProduct":"Çok Al Az Öde",
+                  "size":"18-24 Ay"
+                }
+              ]
+            },
+            {
+              "name": "Ayakkabı",
+              "link": "/ayakkabi"
+            },
+            {
+              "name": "Hastane Çıkışı",
+              "link": "/hastane-cikisi"
+            },
+            {
+              "name": "Yenidoğan Kıyafetleri",
+              "link": "/yenidogan-kiyafetleri"
+            },
+            {
+              "name": "Tulum",
+              "link": "/tulum"
+            },
+            {
+              "name": "Body & Zıbın",
+              "link": "/body-zibin"
+            },
+            {
+              "name": "Tişört & Atlet",
+              "link": "/tisort-atlet"
+            },
+            {
+              "name": "Elbise",
+              "link": "/elbise"
+            },
+            {
+              "name": "Şort",
+              "link": "/sort"
+            },
+            {
+              "name": "Bebek Patiği",
+              "link": "/bebek-patigi"
+            },
+            {
+              "name": "Hırka",
+              "link": "/hirka"
+            },
+            {
+              "name": "Battaniye",
+              "link": "/battaniye"
+            },
+            {
+              "name": "Alt Üst Takım",
+              "link": "/alt-ust-takim"
+            },
+            {
+              "name": "Tişört",
+              "link": "/tisort"
+            },
+            {
+              "name": "Etek",
+              "link": "/etek"
+            },
+            {
+              "name": "Çorap",
+              "link": "/corap"
+            },
+            {
+              "name": "Şapka",
+              "link": "/sapka"
+            },
+            {
+              "name": "Eldiven",
+              "link": "/eldiven"
+            },
+            {
+              "name": "Eşofman",
+              "link": "/esofman"
+            },
+            {
+              "name": "Bere",
+              "link": "/bere"
+            }
+          ]
+        },
+        {
+          "group": "Kız Çocuk",
+          "link": "/kiz-cocuk",
+          "items": [
+            {
+              "name": "Elbise",
+              "link": "/elbise"
+            },
+            {
+              "name": "Sweatshirt",
+              "link": "/sweatshirt"
+            },
+            {
+              "name": "Spor Ayakkabı",
+              "link": "/spor-ayakkabi"
+            },
+            {
+              "name": "Eşofman",
+              "link": "/esofman"
+            },
+            {
+              "name": "İç Giyim & Pijama",
+              "link": "/ic-giyim-pijama"
+            },
+            {
+              "name": "Tişört & Atlet",
+              "link": "/tisort-atlet"
+            },
+            {
+              "name": "Tayt",
+              "link": "/tayt"
+            },
+            {
+              "name": "Günlük Ayakkabı",
+              "link": "/gunluk-ayakkabi"
+            },
+            {
+              "name": "Şort",
+              "link": "/sort"
+            },
+            {
+              "name": "Mont",
+              "link": "/mont"
+            },
+            {
+              "name": "Çocuk Oyun Evi",
+              "link": "/cocuk-oyun-evi"
+            },
+            {
+              "name": "Oyuncak Bebek",
+              "link": "/oyuncak-bebek"
+            },
+            {
+              "name": "Oyuncak Mutfak",
+              "link": "/oyuncak-mutfak"
+            },
+            {
+              "name": "Kaban",
+              "link": "/kaban"
+            },
+            {
+              "name": "Abiye & Elbise",
+              "link": "/abiye-elbise"
+            },
+            {
+              "name": "Ceket",
+              "link": "/ceket"
+            },
+            {
+              "name": "Pantolon",
+              "link": "/pantolon"
+            },
+            {
+              "name": "Kazak",
+              "link": "/kazak"
+            },
+            {
+              "name": "Bot",
+              "link": "/bot"
+            },
+            {
+              "name": "Şapka & Bere & Eldiven",
+              "link": "/sapka-bere-eldiven"
+            }
+          ]
+        },
+        {
+          "group": "Erkek Çocuk",
+          "link": "/erkek-cocuk",
+          "items": [
+            {
+              "name": "Sweatshirt",
+              "link": "/sweatshirt"
+            },
+            {
+              "name": "Spor Ayakkabı",
+              "link": "/spor-ayakkabi"
+            },
+            {
+              "name": "Eşofman",
+              "link": "/esofman"
+            },
+            {
+              "name": "İç Giyim & Pijama",
+              "link": "/ic-giyim-pijama"
+            },
+            {
+              "name": "Tişört & Atlet",
+              "link": "/tisort-atlet"
+            },
+            {
+              "name": "Günlük Ayakkabı",
+              "link": "/gunluk-ayakkabi"
+            },
+            {
+              "name": "Okul Çantası",
+              "link": "/okul-cantasi"
+            },
+            {
+              "name": "Şort",
+              "link": "/sort"
+            },
+            {
+              "name": "Gömlek",
+              "link": "/gomlek"
+            },
+            {
+              "name": "Mont",
+              "link": "/mont"
+            },
+            {
+              "name": "Oyuncak Traktör",
+              "link": "/oyuncak-traktor"
+            },
+            {
+              "name": "Akülü Araba",
+              "link": "/akulu-araba"
+            },
+            {
+              "name": "Kumandalı Araba",
+              "link": "/kumandali-araba"
+            },
+            {
+              "name": "Bisiklet",
+              "link": "/bisiklet"
+            },
+            {
+              "name": "Boxer",
+              "link": "/boxer"
+            },
+            {
+              "name": "İçlik",
+              "link": "/iclik"
+            },
+            {
+              "name": "Bot",
+              "link": "/bot"
+            },
+            {
+              "name": "Krampon",
+              "link": "/krampon"
+            },
+            {
+              "name": "Şapka & Bere & Eldiven",
+              "link": "/sapka-bere-eldiven"
+            },
+            {
+              "name": "Takım Elbise",
+              "link": "/takim-elbise"
+            }
+          ]
+        },
+        {
+          "group": "Bebek Bakım",
+          "link": "/bebek-bakim",
+          "items": [
+            {
+              "name": "Bebek Bezi",
+              "link": "/bebek-bezi"
+            },
+            {
+              "name": "Bebek Şampuanı",
+              "link": "/bebek-sampuani"
+            },
+            {
+              "name": "Krem & Yağlar",
+              "link": "/krem-yaglar"
+            },
+            {
+              "name": "Bebek Çantası",
+              "link": "/bebek-cantasi"
+            },
+            {
+              "name": "Bebek Sabunları",
+              "link": "/bebek-sabunlari"
+            },
+            {
+              "name": "Bebek Deterjanları",
+              "link": "/bebek-deterjanlari"
+            },
+            {
+              "name": "Bebek Vücut Kremi",
+              "link": "/bebek-vucut-kremi"
+            },
+            {
+              "name": "Islak Mendil",
+              "link": "/islak-mendil"
+            },
+            {
+              "name": "Bebek Tarağı",
+              "link": "/bebek-taragi"
+            },
+            {
+              "name": "Bebek Yağı",
+              "link": "/bebek-yagi"
+            },
+            {
+              "name": "Bebek Buhar Makinesi",
+              "link": "/bebek-buhar-makinesi"
+            },
+            {
+              "name": "Bebek Ateş Ölçer",
+              "link": "/bebek-ates-olcer"
+            }
+          ]
+        },
+        {
+          "group": "Oyuncak",
+          "link": "/oyuncak",
+          "items": [
+            {
+              "name": "Eğitici Oyuncaklar",
+              "link": "/egitici-oyuncaklar"
+            },
+            {
+              "name": "Oyuncak Araba",
+              "link": "/oyuncak-araba"
+            },
+            {
+              "name": "Oyuncak Bebek",
+              "link": "/oyuncak-bebek"
+            },
+            {
+              "name": "Bebek & Okul Öncesi",
+              "link": "/bebek-okul-oncesi"
+            },
+            {
+              "name": "Kumandalı Oyuncak",
+              "link": "/kumandali-oyuncak"
+            },
+            {
+              "name": "Robot Oyuncak",
+              "link": "/robot-oyuncak"
+            }
+          ]
+        },
+        {
+          "group": "Beslenme Emzirme",
+          "link": "/beslenme-emzirme",
+          "items": [
+            {
+              "name": "Biberon & Emzik",
+              "link": "/biberon-emzik"
+            },
+            {
+              "name": "Göğüs Pompası",
+              "link": "/gogus-pompasi"
+            },
+            {
+              "name": "Mama Sandalyesi",
+              "link": "/mama-sandalyesi"
+            },
+            {
+              "name": "Mama Önlüğü",
+              "link": "/mama-onlugu"
+            },
+            {
+              "name": "Alıştırma Bardağı",
+              "link": "/alistirma-bardagi"
+            },
+            {
+              "name": "Biberon Temizleyici",
+              "link": "/biberon-temizleyici"
+            },
+            {
+              "name": "Biberon Seti",
+              "link": "/biberon-seti"
+            },
+            {
+              "name": "Bebek Maması",
+              "link": "/bebek-mamasi"
+            },
+            {
+              "name": "Kavanoz Mama",
+              "link": "/kavanoz-mama"
+            },
+            {
+              "name": "Sterilizatör",
+              "link": "/sterilizator"
+            },
+            {
+              "name": "Bebek Bakım Çantası",
+              "link": "/bebek-bakim-cantasi"
+            },
+            {
+              "name": "Yemek Setleri",
+              "link": "/yemek-setleri"
+            },
+            {
+              "name": "Kaşık Maması",
+              "link": "/kasik-mamasi"
+            },
+            {
+              "name": "Buharlı Pişirici",
+              "link": "/buharli-pisirici"
+            },
+            {
+              "name": "Termal Çanta",
+              "link": "/termal-canta"
+            },
+            {
+              "name": "Süt Pompası",
+              "link": "/sut-pompasi"
+            },
+            {
+              "name": "Emzirme Önlüğü",
+              "link": "/emzirme-onlugu"
+            },
+            {
+              "name": "Emzirme Minderi",
+              "link": "/emzirme-minderi"
+            },
+            {
+              "name": "Göğüs Pedi",
+              "link": "/gogus-pedi"
+            },
+            {
+              "name": "Göğüs Kremi",
+              "link": "/gogus-kremi"
+            }
+          ]
+        },
+        {
+          "group": "Taşıma & Güvenlik",
+          "link": "/tasima-guvenlik",
+          "items": [
+            {
+              "name": "Bebek Arabası & Puset",
+              "link": "/bebek-arabasi-puset"
+            },
+            {
+              "name": "Park Yatak",
+              "link": "/park-yatak"
+            },
+            {
+              "name": "Ana Kucağı",
+              "link": "/ana-kucagi"
+            },
+            {
+              "name": "Portbebe & Kanguru",
+              "link": "/portbebe-kanguru"
+            },
+            {
+              "name": "Yürüteç",
+              "link": "/yuruteç"
+            },
+            {
+              "name": "Oto Koltuğu",
+              "link": "/oto-koltugu"
+            },
+            {
+              "name": "Baston Puset",
+              "link": "/baston-puset"
+            },
+            {
+              "name": "Kanguru",
+              "link": "/kanguru"
+            },
+            {
+              "name": "Bebek Salınacakları",
+              "link": "/bebek-salincaklari"
+            }
+          ]
+        },
+        {
+          "group": "Bebek Odası",
+          "link": "/bebek-odasi",
+          "items": [
+            {
+              "name": "Bebek Beşiği",
+              "link": "/bebek-besigi"
+            },
+            {
+              "name": "Bebek Yatağı",
+              "link": "/bebek-yatagi"
+            },
+            {
+              "name": "Bebek Nevresimleri",
+              "link": "/bebek-nevresimleri"
+            },
+            {
+              "name": "Oyuncak Sepetleri",
+              "link": "/oyuncak-sepetleri"
+            },
+            {
+              "name": "Bebek Cibinlik",
+              "link": "/bebek-cibinlik"
+            },
+            {
+              "name": "Oyuncak Dolabı",
+              "link": "/oyuncak-dolabi"
+            },
+            {
+              "name": "Bebek Odası Mobilyaları",
+              "link": "/bebek-odasi-mobilyalari"
+            },
+            {
+              "name": "Bebek Oyun Matları",
+              "link": "/bebek-oyun-matlari"
+            },
+            {
+              "name": "Bebek Oyun Parkı",
+              "link": "/bebek-oyun-parki"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
