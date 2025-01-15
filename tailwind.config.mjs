@@ -28,7 +28,8 @@ export default {
         'star-orange':'#ffc62f',
         'light-orange':'#fff6ec',
         'responsive-bg-gray':'#f7f7f7',
-        'responsive-bg-darkgray':'#e8e8e8'
+        'responsive-bg-darkgray':'#e8e8e8',
+        'responsive-bg-Lightgray':'#f7f7f7'
 
       },
       fontFamily: {

@@ -10,10 +10,11 @@ import { BsFillLightningFill } from "react-icons/bs";
 import { FaChevronRight } from "react-icons/fa6";
 import CategoryMenu from './CategoryMenu';
 
+
 const Home = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isCategoriesHovered, setIsCategoriesHovered] = useState(false);
-    const [activeLink, setActiveLink] = useState(null);
+    const [activeLink, setActiveLink] = useState("/kadın");
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };

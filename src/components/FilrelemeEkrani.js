@@ -23,6 +23,10 @@ import { MdCheckCircle } from "react-icons/md";
 import { MdStars } from "react-icons/md";
 import { GoChevronLeft } from "react-icons/go";
 import { LuFilter } from "react-icons/lu";
+import { IoCheckmark } from "react-icons/io5";
+import { MdClose } from "react-icons/md";
+import { FaAngleRight } from "react-icons/fa6";
+import { FaAngleLeft } from "react-icons/fa6";
 const FilrelemeEkrani = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isCategoriesHovered, setIsCategoriesHovered] = useState(false);
@@ -32,6 +36,8 @@ const FilrelemeEkrani = () => {
     const [selectedOption, setSelectedOption] = useState("Önerilen");
     const [isFixed, setIsFixed] = useState(false);
     const [tooltipVisible, setTooltipVisible] = useState(false);
+    const [isFilterOpen, setIsFilterOpen] = useState(false);
+    const [activeButtons, setActiveButtons] = useState({});
 
     useEffect(() => {
         const handleScroll = () => {
@@ -60,6 +66,13 @@ const FilrelemeEkrani = () => {
         setSelectedOption(option);
         setIsOpen(false);
     };
+    const toggleCategory = (id) => {
+        setOpenCategories((prevOpenCategories) => ({
+            ...prevOpenCategories,
+            [id]: !prevOpenCategories[id],
+        }));
+    };
+
 
     const categories = [
         {
@@ -123,12 +136,13 @@ const FilrelemeEkrani = () => {
         { id: 33, title: "Çok Al Az Öde", content: [] }
     ];
 
-    const toggleCategory = (id) => {
-        setOpenCategories((prevState) => ({
-            ...prevState,
-            [id]: !prevState[id],
+    const responsetoggleCategory = (id) => {
+        // Tıklanan kategori zaten açıksa, onu kapatıyoruz, değilse açıyoruz.
+        setOpenCategories((prevOpenCategories) => ({
+            [id]: !prevOpenCategories[id],  // Tıklanan kategoriyi tersine çeviriyoruz
         }));
     };
+
 
     const handleCheckboxChange = (item) => {
         setSelectedItems((prevSelected) =>
@@ -145,7 +159,7 @@ const FilrelemeEkrani = () => {
         setIsCategoriesHovered(false);
     };
     const [showNavbar, setShowNavbar] = useState(false);
-    const [lastScrollY, setLastScrollY] = useState(0); 
+    const [lastScrollY, setLastScrollY] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -164,7 +178,7 @@ const FilrelemeEkrani = () => {
 
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [lastScrollY]); 
+    }, [lastScrollY]);
     return (
         <div className="lg:min-h-screen bg-light-gray overflow-hidden  ">
 
@@ -395,7 +409,7 @@ const FilrelemeEkrani = () => {
                                                     alt="Kamera ikonu"
                                                     width={17}
                                                     height={17}
-                                                    className="ml-2" 
+                                                    className="ml-2"
                                                 />
                                             )}
                                         </label>
@@ -409,7 +423,7 @@ const FilrelemeEkrani = () => {
                                             <span>{category.title}</span>
                                             {category.id === 21 && (
                                                 <div
-                                                    className="ml-2 relative" 
+                                                    className="ml-2 relative"
                                                     onMouseEnter={() => setTooltipVisible(true)}
                                                     onMouseLeave={() => setTooltipVisible(false)}
                                                 >
@@ -417,11 +431,11 @@ const FilrelemeEkrani = () => {
                                                         Satıcı Tipi Nedir?
                                                     </span>
                                                     {tooltipVisible && (
-                                                        <div className="absolute left-0 bottom-full mb-2 bg-white text-black rounded-lg p-3 shadow-lg w-72 z-20 overflow-visible"> 
+                                                        <div className="absolute left-0 bottom-full mb-2 bg-white text-black rounded-lg p-3 shadow-lg w-72 z-20 overflow-visible">
                                                             <div className="mb-3">
                                                                 <div className="flex items-center text-blue-500 font-bold text-sm">
                                                                     <MdCheckCircle size={20} className="mr-2" />
-                                                                    Onaylanmış Satıcı 
+                                                                    Onaylanmış Satıcı
                                                                 </div>
                                                                 <p className="text-xs text-gray-700 mb-5">
                                                                     Türkiye’de veya uluslararası olarak yüksek bilinirliğe sahip markaların resmi satıcılarına "Onaylanmış Satıcı" rozeti verilir.
@@ -429,8 +443,8 @@ const FilrelemeEkrani = () => {
                                                             </div>
                                                             <div className="mb-3">
                                                                 <div className="flex items-center text-orange font-bold text-sm">
-                                                                    <MdStars size={20} className="mr-2" /> 
-                                                                    Başarılı Satıcı 
+                                                                    <MdStars size={20} className="mr-2" />
+                                                                    Başarılı Satıcı
                                                                 </div>
                                                                 <p className="text-xs text-gray-700 mb-5">
                                                                     Trendyol’daki son 6 ay performansıyla yüksek müşteri memnuniyeti sağlayan, kaliteli ve güvenilir hizmet veren satıcılara "Başarılı Satıcı" rozeti verilir.
@@ -438,7 +452,7 @@ const FilrelemeEkrani = () => {
                                                             </div>
                                                             <div>
                                                                 <div className="flex items-center text-red-500 font-bold text-sm">
-                                                                    <MdCheckCircle size={20} className="mr-2" /> 
+                                                                    <MdCheckCircle size={20} className="mr-2" />
                                                                     Yetkili Satıcı
                                                                 </div>
                                                                 <p className="text-xs text-gray-700 mb-5">
@@ -490,7 +504,7 @@ const FilrelemeEkrani = () => {
                                         )}
                                     </>
                                 )}
-                                <hr className="ml-0.5 border-gray-200" />
+                                <hr className="lg:ml-0.5 border-gray-200" />
                             </li>
                         ))}
                     </ul>
@@ -502,7 +516,7 @@ const FilrelemeEkrani = () => {
                         <div className="flex flex-col lg:hidden items-start mt-0">
                             <div className="flex items-center justify-start mt-2 w-full">
                                 <GoChevronLeft size={35} className="mr-2" />
-                                <div className="flex flex-col justify-center text-center w-full">
+                                <div className="flex flex-col justify-center items-center text-center md:w-full w-[80vw]">
                                     <p className="text-dark-black text-base font-normal mb-0">
                                         Bebek Takımı
                                     </p>
@@ -521,38 +535,275 @@ const FilrelemeEkrani = () => {
                             }`}>
                             <div className="relative lg:ml-[360px] ml-[0px] lg:flex-row flex">
                                 <div
-                                    className="border border-1 flex items-center justify-center lg:font-normal font-semibold lg:justify-between rounded-lg hover:border-orange cursor-pointer lg:w-[17vw] w-[50vw] px-4 py-2 lg:text-sm text-md text-dark-grey"
+                                    className="border border-1 flex items-center justify-center lg:font-normal font-semibold lg:justify-between lg:rounded-lg lg:hover:border-orange cursor-pointer lg:w-[17vw] w-[50vw] px-4 py-2 lg:text-sm text-md text-dark-grey"
                                     onClick={() => setIsOpen(!isOpen)}
                                 >
                                     <HiMiniArrowsUpDown size={24} className="lg:hidden mr-2 text-orange" />
                                     <span>{selectedOption}</span>
                                     <HiMiniArrowsUpDown size={24} className="hidden lg:block text-orange" />
                                 </div>
+                                {isOpen && (
+                                    <ul
+                                        className={`lg:absolute lg:left-0 lg:top-full lg:mt-1 lg:w-[17vw] 
+      sm:fixed fixed sm:bottom-0 bottom-0 sm:left-0 left-0 sm:w-full w-full sm:mt-0 mt-0 
+      border border-gray-200 lg:border-gray-200 lg:rounded-md sm:rounded-t-lg rounded-t-lg
+      bg-white shadow-lg lg:!bg-white lg:!shadow-lg z-50 text-xs`}
+                                    >
+                                        <li className="lg:hidden px-4 py-3 text-[15px] font-semibold flex justify-between items-center">
+                                            <span>Sıralama</span>
+                                            <MdClose className="text-medium-grey" />
+                                        </li>
+
+
+                                        <hr className="lg:hidden text-medium-grey"></hr>
+
+                                        {options.map((option, index) => (
+
+                                            <li
+                                                key={index}
+                                                className={`flex justify-between items-center px-4 py-2 text-sm cursor-pointer border-r border-l  border-t-gray-200  bg-white  ${selectedOption === option
+                                                    ? "lg:bg-gray-200 text-orange font-bold"
+                                                    : "lg:hover:bg-gray-100 lg:hover:font-semibold lg:hover:text-orange"
+                                                    }`}
+                                                onClick={() => handleOptionClick(option)}
+                                            >
+                                                <span>{option}</span>
+                                                {selectedOption === option && (
+                                                    <span><IoCheckmark size={20} className="text-orange font-bold lg:hidden" /></span>
+                                                )}
+                                            </li>
+                                        ))}
+
+                                    </ul>
+                                )}
                                 <div
-                                    className="lg:hidden border border-1 flex items-center justify-center lg:font-normal font-semibold lg:justify-between rounded-lg hover:border-orange cursor-pointer lg:w-[17vw] w-[50vw]  px-4 py-2 lg:text-sm text-md text-dark-grey"
-                                    onClick={() => setIsOpen(!isOpen)}
+                                    className="lg:hidden border border-1 flex items-center justify-center lg:font-normal font-semibold lg:justify-between lg:hover:border-orange cursor-pointer lg:w-[17vw] w-[50vw]  px-4 py-2 lg:text-sm text-md text-dark-grey"
+                                    onClick={() => setIsFilterOpen(!isFilterOpen)} // Tam ekran açma/kapatma için durum kontrolü
                                 >
                                     <LuFilter size={24} className="lg:hidden mr-2 text-orange" />
                                     <p>Filtrele</p><p className='text-orange ml-1'>(1)</p>
                                     <LuFilter size={24} className="hidden lg:block text-orange" />
                                 </div>
-                                {isOpen && (
-                                    <ul className="absolute left-0 top-full mt-1 w-[250px] border border-gray-200 rounded-md bg-white shadow-lg z-50 text-xs">
-                                        {options.map((option, index) => (
-                                            <li
-                                                key={index}
-                                                className={`px-4 py-2 text-sm cursor-pointer ${selectedOption === option ? "bg-gray-200 hover:text-orange hover:font-bold" : "hover:bg-gray-100  hover:font-semibold hover:text-orange"
-                                                    }`}
-                                                onClick={() => handleOptionClick(option)}
+
+                                {isFilterOpen && (
+                                    <div className="fixed inset-0 bg-white z-50 overflow-y-auto flex flex-col px-4 py-6">
+                                        {/* Başlık ve Kapatma Butonu */}
+                                        <div className="relative flex items-center justify-center mb-4">
+                                            {/* Çarpı İşareti */}
+                                            <button
+                                                onClick={() => setIsFilterOpen(false)}
+                                                className="absolute left-0 text-dark-grey"
                                             >
-                                                {option}
-                                            </li>
-                                        ))}
-                                    </ul>
+                                                <MdClose size={24} />
+                                            </button>
+                                            {/* Filtrele Yazısı */}
+                                            <h2 className="text-lg font-normal">FİLTRELE</h2>
+                                        </div>
+                                        <hr className="-ml-[4vw] border-t-2 py-3 bg-responsive-bg-gray w-[100vw]" />
+
+                                        <div className="relative flex flex-col items-start justify-start mb-4 ml-2 mt-2 space-y-2">
+                                            <h2 className="text-sm font-bold text-dark-grey">Seçili Filtreler</h2>
+                                            <h2 className="text-xs font-normal text-medium-grey border border-medium-grey bg-light-gray rounded-xl px-2 py-1">
+                                                Bebek Takımı
+                                            </h2>
+                                        </div>
+
+                                        <hr className="-ml-[4vw] border-t-2 py-3 bg-responsive-bg-gray w-[100vw]" />
+
+                                        {/* Filtre Kategorileri */}
+                                        <ul className="space-y-4">
+                                            {categories
+                                                .filter((category) => category.id <= 23)
+                                                .map((category) => (
+                                                    <li key={category.id} className="border-b pb-2">
+                                                        <div
+                                                            className="flex items-center justify-between py-2 cursor-pointer"
+                                                            onClick={() => responsetoggleCategory(category.id)}
+                                                        >
+                                                            <span className="font-thin">{category.title}</span>
+                                                            <span>
+                                                                {openCategories[category.id] ? (
+                                                                    <FaAngleLeft size={19} className="text-orange" />
+                                                                ) : (
+                                                                    <FaAngleRight size={19} className="text-orange" />
+                                                                )}
+                                                            </span>
+                                                        </div>
+                                                        {openCategories[category.id] && (
+                                                            <div className="pl-4 mt-2">
+                                                                <ul className="space-y-2">
+                                                                    {Array.isArray(category.content) &&
+                                                                        category.content.map((item, idx) => (
+                                                                            <li key={idx} className="flex items-center space-x-2">
+                                                                                {category.id !== 1 && (
+                                                                                    <input
+                                                                                        type="checkbox"
+                                                                                        id={`content-${category.id}-${idx}`}
+                                                                                        className="w-4 h-4 text-orange-500 border-gray-50 rounded focus:ring-orange"
+                                                                                        checked={selectedItems.includes(item)}
+                                                                                        onChange={() => handleCheckboxChange(item)}
+                                                                                    />
+                                                                                )}
+                                                                                <label
+                                                                                    htmlFor={`content-${category.id}-${idx}`}
+                                                                                    className={`text-[14px] font-thin cursor-pointer ${category.id === 1 ? 'text-orange font-bold' : 'text-gray-700'
+                                                                                        }`}
+                                                                                >
+                                                                                    {item}
+                                                                                </label>
+                                                                            </li>
+                                                                        ))}
+                                                                </ul>
+                                                            </div>
+                                                        )}
+                                                    </li>
+                                                ))}
+                                            {/* Ekstra Filtreler */}
+                                            <ul className="space-y-5 py-2 font-thin">
+                                                <li className="flex items-center border-t pt-2">
+                                                    <span className="whitespace-nowrap overflow-hidden text-ellipsis">Flaş Ürünler</span>
+                                                </li>
+                                                <li className="flex items-center border-t pt-2">
+                                                    <span className="whitespace-nowrap overflow-hidden text-ellipsis">Kuponlu Ürünler</span>
+                                                    <img src="/images/kupon.webp" alt="Coupon Icon" className="ml-2 w-5 h-3" />
+                                                </li>
+                                                <li className="flex items-center border-t pt-2">
+                                                    <span className="whitespace-nowrap overflow-hidden text-ellipsis">Hızlı Teslimat</span>
+                                                </li>
+                                                <li className="flex items-center border-t pt-2">
+                                                    <span className="whitespace-nowrap overflow-hidden text-ellipsis">Fenomenlerin Seçtikleri</span>
+                                                </li>
+                                                <li className="flex items-center border-t pt-2">
+                                                    <span className="whitespace-nowrap overflow-hidden text-ellipsis">Çok Al Az Öde</span>
+                                                </li>
+                                                <li className="flex items-center border-t pt-2">
+                                                    <span className="whitespace-nowrap overflow-hidden text-ellipsis">Kampanyalı Ürünler</span>
+                                                </li>
+                                                <li className="flex items-center border-t pt-2">
+                                                    <span className="whitespace-nowrap overflow-hidden text-ellipsis">Hediye Paketi</span>
+                                                </li>
+                                                <li className="flex items-center border-t pt-2">
+                                                    <span className="whitespace-nowrap overflow-hidden text-ellipsis">Birlikte Al Kazan</span>
+                                                </li>
+                                                <li className="flex items-center border-t pt-2">
+                                                    <span className="whitespace-nowrap overflow-hidden text-ellipsis">Fotoğraflı Yorumlar</span>
+                                                </li>
+                                                <li className="flex items-center border-t pt-2">
+                                                    <span className="whitespace-nowrap overflow-hidden text-ellipsis">Videolu Ürünler</span>
+                                                </li>
+                                                <li className="flex items-center border-t pt-2">
+                                                    <span className="whitespace-nowrap overflow-hidden text-ellipsis">Kargo Bedava</span>
+                                                </li>
+                                                <li className="flex items-center border-t pt-2">
+                                                    <span className="whitespace-nowrap overflow-hidden text-ellipsis">Kurumsal Faturaya Uygun</span>
+                                                </li>
+                                                <li className="flex items-center border-t pt-2">
+                                                    <span className="whitespace-nowrap overflow-hidden text-ellipsis">9 Puan Üzeri Satıcılar</span>
+                                                </li>
+                                                <li className="flex items-center border-t pt-2">
+                                                    <span className="whitespace-nowrap overflow-hidden text-ellipsis">Bugün Kargoda</span>
+                                                </li>
+                                            </ul>
+
+                                        </ul>
+                                    </div>
                                 )}
+
                             </div>
                         </div>
                     </div>
+
+                    {/* Responsive */}
+                    <div className="lg:hidden overflow-x-auto w-[100vw]">
+                        <ul className="lg:hidden flex flex-row space-x-4 md:space-x-4 py-2.5 md:py-2.5 px-4">
+                            {categories
+                                .filter((category) => [3, 2, 7, 9, 10, 4].includes(category.id))
+                                .map((category) => (
+                                    <li
+                                        key={category.id}
+                                        className="transition-colors duration-200 flex items-center border border-gray-300 rounded-2xl w-auto h-[7vw] md:h-[4vw] px-2.5 py-2 md:px-2.5 md:py-2 text-sm font-thin"
+                                    >
+                                        <div
+                                            className="flex items-center justify-between py-1 px-6.5 cursor-pointer"
+                                            onClick={() => responsetoggleCategory(category.id)}
+                                        >
+                                            <span className="whitespace-nowrap overflow-hidden text-ellipsis">
+                                                {category.title}
+                                            </span>
+
+                                            <span>
+                                                {openCategories[category.id] ? (
+                                                    <FiChevronUp size={18} className="text-orange" />
+                                                ) : (
+                                                    <FiChevronDown size={18} className="text-orange" />
+                                                )}
+                                            </span>
+                                        </div>
+                                    </li>
+                                ))}
+                            <li className="transition-colors duration-200 flex items-center border border-gray-300 rounded-2xl w-auto h-[7vw] md:h-[4vw] px-2.5 py-2 text-sm font-thin">
+                                <div className="flex items-center">
+                                    <LiaShippingFastSolid size={20} className="text-green-500 mr-2" />
+                                    <span className="whitespace-nowrap overflow-hidden text-ellipsis">Hızlı Teslimat</span>
+                                </div>
+                            </li>
+                            <li className="transition-colors duration-200 flex items-center border border-gray-300 rounded-2xl w-auto h-[7vw] md:h-[4vw] px-2.5 py-2 text-sm font-thin">
+                                <span className="whitespace-nowrap overflow-hidden text-ellipsis">Flaş Ürünler</span>
+                            </li>
+                            <li className="transition-colors duration-200 flex items-center border border-gray-300 rounded-2xl w-auto h-[7vw] md:h-[4vw] px-2.5 py-2 text-sm font-thin">
+                                <span className="whitespace-nowrap overflow-hidden text-ellipsis">Kuponlu Ürünler</span>
+                            </li>
+                        </ul>
+                        {categories
+                            .filter((category) => [3, 2, 7, 9, 10, 4].includes(category.id))
+                            .map((category) => (
+                                openCategories[category.id] && (
+                                    <div key={category.id} className="w-full min-h-0 overflow-auto pl-6 relative">
+                                        <ul className="space-y-2 grid grid-cols-2 gap-x-4 gap-y-2">
+                                            {Array.isArray(category.content) &&
+                                                category.content.map((item, idx) => (
+                                                    <li key={idx} className="flex items-center space-x-1">
+                                                        {category.id !== 1 && (
+                                                            <input
+                                                                type="checkbox"
+                                                                id={`content-${category.id}-${idx}`}
+                                                                className="w-4 h-4 text-orange-500 border-gray-50 rounded focus:ring-orange"
+                                                                checked={selectedItems.includes(item)}
+                                                                onChange={() => handleCheckboxChange(item)}
+                                                            />
+                                                        )}
+                                                        <label
+                                                            htmlFor={`content-${category.id}-${idx}`}
+                                                            className={`text-[14px] font-thin cursor-pointer ${category.id === 1 ? 'text-orange font-bold mb-2' : 'text-gray-700'
+                                                                }`}
+                                                        >
+                                                            {item}
+                                                        </label>
+                                                    </li>
+                                                ))}
+                                        </ul>
+
+                                        {/* Sabitlenen Butonlar */}
+                                        <div className="sticky bottom-0 -ml-5 left-0 w-[50vw]] bg-white py-2 border-t border-gray-300">
+                                            <div className="flex justify-between items-center">
+                                                <button
+                                                    className="px-[16vw] md:px-[20vw] py-3 bg-light-medium-grey rounded-md text-md font-medium text-medium-grey transition ml-2 "
+                                                >
+                                                    Temizle
+                                                </button>
+                                                <button
+                                                    className="px-[16vw] md:px-[20vw] py-3 bg-orange-500 text-white rounded-md text-md font-medium bg-orange transition mr-2 "
+                                                >
+                                                    Uygula
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                            ))}
+                    </div>
+
+
 
                     <div className={`lg:flex space-x-2 mt-5 hidden`}>
                         <div>
@@ -575,7 +826,7 @@ const FilrelemeEkrani = () => {
                         </button>
                     </div>
 
-                    <hr className="w-[64vw] m-4 border-gray-200" />
+                    <hr className="lg:w-[64vw] lg:m-4 lg:border-gray-200" />
                     <div>
                         <div>
                             <Urunler />

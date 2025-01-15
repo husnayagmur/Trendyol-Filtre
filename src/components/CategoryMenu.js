@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { FaChevronRight } from "react-icons/fa";
 import Image from 'next/image';
+import { MdClose } from "react-icons/md";
+
 
 import CategoriesWoman from './CategoriesWoman';
 import categoriesDataWoman from '../data/CategoriesWoman.json';
@@ -79,7 +81,7 @@ const CategoryMenu = () => {
                         key={index}
                         onMouseEnter={() => setActiveIndex(index)}
                         className={`flex items-center px-2 py-3 cursor-pointer group transition-colors duration-300 
-                            ${activeIndex === index ? 'bg-white text-orange' : 'bg-Lgray group-hover:bg-white'}`}
+                        ${activeIndex === index ? 'bg-white text-orange' : 'bg-Lgray group-hover:bg-white'}`}
                     >
                         <div className="flex items-center space-x-3 w-[190px] group">
                             <Image
@@ -98,9 +100,53 @@ const CategoryMenu = () => {
                 ))}
             </div>
 
-            {getCategoryComponent()}
+            {/* getCategoryComponent sadece lg ve daha büyük ekranlarda olacak */}
+            <div className="hidden lg:block">
+                {getCategoryComponent()}
+            </div>
+
+            {/* Tablet ve telefon görünümünde sadece kategori ismi ve ikon */}
+            <div className="lg:hidden fixed justify-between top-0 left-0 w-[80vw] h-full bg-light-gray">
+                <div className="flex items-center px-4 py-3 text-2xl font-bold  justify-between w-full bg-responsive-bg-Lightgray">
+                    trendyol
+                    <MdClose size={30} className="ml-auto text-gray-600 " />
+                </div>
+                <hr className="w-full border-t-0.5 border-medium-gray" />
+                <div className="hidden md:block px-4 py-3 text-xl font-semibold text-gray-800">
+                    Flaş Ürünler
+                </div>
+                <hr className="w-full border-t-0.5 border-medium-gray mb-4" />
+                {categories.map((category, index) => (
+                    <div
+                        key={index}
+                        onMouseEnter={() => setActiveIndex(index)}
+                        className={`flex items-center px-4 py-2 cursor-pointer group transition-colors duration-300 
+                        ${activeIndex === index ? 'bg-white ' : 'bg-light-gray '}`}
+                    >
+                         <div className="flex items-center space-x-4 w-full">
+                <Image
+                    src={category.icon}
+                    alt={category.name}
+                    width={32}  
+                    height={32} 
+                    className="duration-300"
+                />
+                            <span className={`text-xl font-thin ${activeIndex === index ? 'text-black' : 'text-gray-800'} `}>
+                                {category.name}
+                                <hr className="w-[65vw] border-t-2 border-medium-gray mt-2" />
+                            </span>
+                        </div>
+                        <FaChevronRight className={`text-medium-grey ${activeIndex === index ? 'text-medium-grey' : 'text-medium-grey'}`} />
+
+                    </div>
+                ))}
+            </div>
         </div>
+
     );
-};
+}
+
+
+
 
 export default CategoryMenu;
