@@ -9,7 +9,7 @@ import { FaStarHalfStroke } from "react-icons/fa6";
 
 const Urunler = () => {
     const products = categoriesData.categoriesAnneCocuk[0].subCategories[0].items[0].images;
-
+console.log('husnayagmur')
     return (
         <div className="p-4">
             <div className="grid sm:grid-cols-4 md:grid-cols-2 grid-cols-2 lg:grid-cols-4 gap-2 font-source-sans-pro">
